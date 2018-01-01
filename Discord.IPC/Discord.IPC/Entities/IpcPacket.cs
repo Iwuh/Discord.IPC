@@ -8,7 +8,7 @@ namespace Discord.IPC.Entities
     /// <summary>
     /// A packet transmitted or recieved over IPC.
     /// </summary>
-    public class IpcPacket
+    public sealed class IpcPacket
     {
         /// <summary>
         /// The packet's <see cref="Entities.OpCode"/>.

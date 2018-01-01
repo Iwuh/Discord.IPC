@@ -8,7 +8,7 @@ namespace Discord.IPC.Entities
     /// <summary>
     /// Used to build a Discord rich presence that can be sent over IPC. Refer to the docs for a visual example of each field.
     /// </summary>
-    public class RichPresenceBuilder
+    public sealed class RichPresenceBuilder
     {
         private string _state;
         private string _details;
