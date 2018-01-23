@@ -7,7 +7,7 @@ namespace Discord.IPC.Entities
     /// <summary>
     /// Event data for errors.
     /// </summary>
-    public sealed class ErrorEventArgs : EventArgs
+    public sealed class IpcErrorEventArgs : EventArgs
     {
         /// <summary>
         /// The error's numerical identifier.
@@ -19,7 +19,7 @@ namespace Discord.IPC.Entities
         /// </summary>
         public string Message { get; private set; }
 
-        public ErrorEventArgs(int code, string message)
+        public IpcErrorEventArgs(int code, string message)
         {
             ErrorCode = code;
             Message = message;
