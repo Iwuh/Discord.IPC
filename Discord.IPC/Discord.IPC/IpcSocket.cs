@@ -62,9 +62,12 @@ namespace Discord.IPC
         /// <param name="opCode">The IPC opcode.</param>
         /// <param name="data">The data to write.</param>
         /// <returns>The <see cref="IpcPacket"/> that was written.</returns>
-        public IpcPacket Write(OpCode opCode, JObject data)
+        public IpcPacket Write(OpCode opCode, JObject data, bool addNonce = true)
         {
-            data.Add("nonce", new JValue(Guid.NewGuid()));
+            if (addNonce)
+            {
+                data.Add("nonce", new JValue(Guid.NewGuid()));
+            }
 
             var p = new IpcPacket(opCode, data);
             var payload = p.ToBytes();

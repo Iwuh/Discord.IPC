@@ -19,7 +19,7 @@ namespace Discord.IPC.Entities
         /// </summary>
         public User User { get; private set; }
 
-        public ActivityEventArgs(string secret, User user)
+        public ActivityEventArgs(string secret, User user = null)
         {
             Secret = secret; // I've got a secret
             User = user;
